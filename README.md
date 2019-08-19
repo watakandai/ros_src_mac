@@ -36,11 +36,19 @@ SET (Boost_LIBRARY_DIR "/usr/local/lib")
 - ogre (1.9)
 
 ## Tell cmake where to find following libraries
-- /usr/local/Cellar/pcl/1.9.1_4/share/pcl-1.9/Modules/FindFLANN.cmake
+- `/usr/local/Cellar/pcl/1.9.1_4/share/pcl-1.9/Modules/FindFLANN.cmake`
 Add following lines at the top
 
 ```
 set(FLANN_LIBRARIES /usr/local/lib/libflann.dylib /usr/local/lib/libflann_cpp.dylib)
 set(FLANN_FOUND TRUE)
+```
+
+# Build and Install
+change <NAME>
+
+```
+cd ~/ros_catkin_ws
+./src/catkin/bin/catkin_make_isolated --install -DCMAKE_MACOSX_RPATH=ON -DCMAKE_INSTALL_RPATH="/Users/<NAME>/ros_catkin_ws/install_isolated/lib" -DCMAKE_BUILD_TYPE=Release
 ```
 
